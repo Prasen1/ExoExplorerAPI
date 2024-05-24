@@ -24,8 +24,8 @@ func addExoplanet(e Exoplanet) {
 }
 
 func getAllExoplanets() []Exoplanet {
-	mutex.Lock()
-	defer mutex.Unlock()
+	//mutex.Lock()
+	//defer mutex.Unlock()
 	all := make([]Exoplanet, 0, len(exoplanets))
 	for _, exoplanet := range exoplanets {
 		all = append(all, exoplanet)
@@ -34,8 +34,8 @@ func getAllExoplanets() []Exoplanet {
 }
 
 func getExoplanetByID(id string) (Exoplanet, error) {
-	mutex.Lock()
-	defer mutex.Unlock()
+	//mutex.Lock()
+	//defer mutex.Unlock()
 	exoplanet, exists := exoplanets[id]
 	if !exists {
 		return exoplanet, errors.New("exoplanet not found")
